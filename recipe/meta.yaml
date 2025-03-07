@@ -22,9 +22,9 @@ requirements:
     - ninja-base
     - patch  # [s390x]
   host:
-    - aws-c-common 0.8.5
-    - aws-c-io 0.13.10
-    - aws-c-http 0.6.25
+    - aws-c-common 0.11.1
+    - aws-c-io 0.17.0
+    - aws-c-http 0.9.3
 
 test:
   commands:
