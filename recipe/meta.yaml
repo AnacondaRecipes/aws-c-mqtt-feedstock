@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/awslabs/aws-c-mqtt/archive/v{{ version }}.tar.gz
   sha256: 5707e8ddb536bc6dfc65fb16e4db8f3b9510aa187a8c5b5d59824f8a9ead7a63
-  patches:                               # [s390x]
-    - 0001-skip-failing-s390x-test.patch # [s390x]
 
 build:
   number: 0
@@ -20,7 +18,6 @@ requirements:
     - cmake
     - {{ compiler('c') }}
     - ninja-base
-    - patch  # [s390x]
   host:
     - aws-c-common 0.11.1
     - aws-c-io 0.17.0
