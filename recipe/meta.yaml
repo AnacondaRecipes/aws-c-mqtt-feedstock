@@ -1,5 +1,5 @@
 {% set name = "aws-c-mqtt" %}
-{% set version = "0.13.2" %}
+{% set version = "0.13.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/awslabs/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 8d22b181e4c90f5c683e786aadb9fb59a30a699c332e96e16595216ef9058c2f
+  sha256: 1dfc11d6b3dc1a6d408df64073e8238739b4c50374078d36d3f2d30491d15527
 
 build:
   number: 0
@@ -16,20 +16,21 @@ build:
 
 requirements:
   build:
-    - cmake >=3.9
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
+    - cmake >=3.9
     - ninja-base
   host:
-    - aws-c-common 0.12.3
-    - aws-c-io 0.20.1
-    - aws-c-http 0.10.2
+    - aws-c-common 0.12.4
+    - aws-c-io 0.21.4
+    - aws-c-http 0.10.4
 
 test:
   commands:
     - test -f $PREFIX/lib/libaws-c-mqtt${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/include/aws/mqtt/mqtt.h  # [unix]
     - if not exist %LIBRARY_INC%\\aws\\mqtt\\mqtt.h exit 1  # [win]
-    - if not exist %PREFIX%\\Library\\bin\\aws-c-mqtt.dll exit 1  # [win]
+    - if not exist %LIBRARY_BIN%\\aws-c-mqtt.dll exit 1  # [win]
 
 about:
   home: https://github.com/awslabs/aws-c-mqtt
