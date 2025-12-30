@@ -10,7 +10,7 @@ source:
   sha256: 1dfc11d6b3dc1a6d408df64073e8238739b4c50374078d36d3f2d30491d15527
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("aws-c-mqtt", max_pin="x.x.x") }}
 
@@ -21,9 +21,9 @@ requirements:
     - cmake >=3.9
     - ninja-base
   host:
-    - aws-c-common 0.12.4
-    - aws-c-io 0.21.4
-    - aws-c-http 0.10.4
+    - aws-c-common 0.12.6
+    - aws-c-io 0.23.3
+    - aws-c-http 0.10.7
 
 test:
   commands:
