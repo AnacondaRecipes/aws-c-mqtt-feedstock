@@ -22,8 +22,8 @@ requirements:
     - ninja-base
   host:
     - aws-c-common 0.12.6
-    - aws-c-io 0.23.3
-    - aws-c-http 0.10.7
+    - aws-c-io 0.26.3
+    - aws-c-http 0.10.13
 
 test:
   commands:
