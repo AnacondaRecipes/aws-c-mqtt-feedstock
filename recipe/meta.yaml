@@ -1,13 +1,13 @@
 {% set name = "aws-c-mqtt" %}
-{% set version = "0.16.1" %}
+{% set version = "1.0.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://github.com/awslabs/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 48fd84e6ff51fdce5cdc4250593d7b0f10db91f8592737c0fe69e0177ee48144
+  sha256: 28d9d9edd5f643b5a8db4e4f116c09d0781fd3715341ad3b039da3233a3d7b12
 
 build:
   number: 0
@@ -21,9 +21,9 @@ requirements:
     - cmake >=3.9
     - ninja-base
   host:
-    - aws-c-common 0.14.5
-    - aws-c-io 0.27.6
-    - aws-c-http 0.11.0
+    - aws-c-common 1.0.1
+    - aws-c-io 1.0.0
+    - aws-c-http 1.0.0
 
 test:
   commands:
